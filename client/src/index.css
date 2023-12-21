@@ -1,0 +1,153 @@
+:root {
+  --primary-bg: #242424;
+  --secondary-bg: #0504043a;
+  --text-light: #ffffff;
+  --text-dark: #213547;
+  --accent-color: #747bff;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--text-light);
+  background-color: var(--primary-bg);
+  font-synthesis: none;
+  margin: 0;
+}
+
+.dash-container {
+  display: flex;
+  align-content: center;
+}
+
+.notification-container {
+  word-break: break-word;
+  margin: 1.5rem;
+  border-radius: 14px;
+  text-align: center;
+  background-color: var(--secondary-bg);
+  min-width: 200px;
+  max-width: 200px;
+}
+
+.notification-container > ul {
+  padding: 1rem;
+  border-radius: 14px;
+  color: rgb(255, 84, 86);
+  list-style-type: none;
+  gap: 3;
+}
+
+.controls-container {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.battery-container,
+.payload-container {
+  display: flex;
+  flex-direction: column;
+  filter: grayscale(100%);
+  align-items: center;
+  padding: 20px;
+  min-width: 300px;
+  border-radius: 14px;
+  text-align: center;
+  background-color: var(--secondary-bg);
+  margin: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.batteries-container,
+.payloads-container {
+  display: flex;
+}
+
+.commands-container {
+  background-color: var(--secondary-bg);
+  text-align: center;
+  padding: 3rem;
+  border-radius: 14px;
+}
+
+.commands-container > button {
+  margin: 1rem;
+  min-width: 275px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button {
+  background-color: var(--accent-color);
+  font-family: "Poppins";
+  color: var(--text-light);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5a5a5a;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-light: #213547;
+    --primary-bg: #ffffff;
+  }
+
+  a:hover {
+    color: var(--accent-color);
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+
+  button {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+  }
+
+  button:hover {
+    background-color: #d9d9d9;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .dash-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .notification-container {
+    margin: 1.5rem;
+    border-radius: 14px;
+    background-color: var(--secondary-bg);
+  }
+
+  .batteries-container,
+  .payloads-container {
+    display: inline;
+  }
+
+  .commands-container > button {
+    margin: 1rem;
+    min-width: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .dash-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
