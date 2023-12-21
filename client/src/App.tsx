@@ -10,7 +10,6 @@ const App = () => {
   const notifications = useSelector(
     (state: RootState) => state.notifications.notifications
   );
-  // console.log(notifications);
   return (
     <>
       <div className="dash-container">

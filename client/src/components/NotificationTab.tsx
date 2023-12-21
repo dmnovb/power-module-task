@@ -1,7 +1,7 @@
 import { Notification } from "../state/notificationsSlice";
 import { CSSProperties } from "react";
 
-type NotificationTabProps = Notification & {
+type NotificationTabProps = {
   notifications: Notification[];
 };
 

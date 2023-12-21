@@ -6,7 +6,7 @@ import {
 } from "../state/payloadSlice";
 import { notificationSupplier } from "../state/notificationsSlice";
 
-type CommandsProps = Payload & {
+type CommandsProps = {
   payloads: Payload[];
 };
 

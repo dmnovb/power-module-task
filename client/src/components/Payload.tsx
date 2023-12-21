@@ -27,7 +27,7 @@ export const Payload = ({ name, amps, connected }: PayloadProps) => {
       var intervalId = setInterval(() => {
         changeIndex();
       }, 2500);
-      setCurrentAmpIndex(0); // debatable
+      setCurrentAmpIndex(0);
     }
 
     return () => clearInterval(intervalId);
