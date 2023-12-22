@@ -12,13 +12,13 @@ body {
   font-weight: 500;
   color: var(--text-light);
   background-color: var(--primary-bg);
-  font-synthesis: none;
   margin: 0;
 }
 
 .dash-container {
   display: flex;
   align-content: center;
+  padding: 24px;
 }
 
 .notification-container {
@@ -34,9 +34,7 @@ body {
 .notification-container > ul {
   padding: 1rem;
   border-radius: 14px;
-  color: rgb(255, 84, 86);
   list-style-type: none;
-  gap: 3;
 }
 
 .controls-container {
@@ -44,7 +42,6 @@ body {
   display: flex;
   flex-direction: column;
   place-items: center;
-  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
 }
@@ -53,7 +50,6 @@ body {
 .payload-container {
   display: flex;
   flex-direction: column;
-  filter: grayscale(100%);
   align-items: center;
   padding: 20px;
   min-width: 300px;
@@ -79,14 +75,10 @@ body {
 .commands-container > button {
   margin: 1rem;
   min-width: 275px;
+  font-family: "Poppins";
   font-size: 16px;
   font-weight: bold;
-  text-transform: uppercase;
-}
-
-button {
   background-color: var(--accent-color);
-  font-family: "Poppins";
   color: var(--text-light);
   border: none;
   padding: 10px 20px;
@@ -110,10 +102,6 @@ button:hover {
   }
 
   button {
-    background-color: #f9f9f9;
-  }
-
-  button {
     background-color: var(--accent-color);
     color: var(--text-light);
   }
@@ -125,29 +113,46 @@ button:hover {
 
 @media screen and (max-width: 1020px) {
   .dash-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .notification-container {
-    margin: 1.5rem;
-    border-radius: 14px;
-    background-color: var(--secondary-bg);
+    display: flex;
+    flex-direction: column-reverse;
   }
 
+  .batteries-container,
+  .payloads-container {
+    display: inline-flex;
+  }
+
+  .notification-container {
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .dash-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .batteries-container,
+  .payloads-container {
+    display: inline-flex;
+  }
+
+  .notification-container {
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 720px) {
   .batteries-container,
   .payloads-container {
     display: inline;
   }
 
-  .commands-container > button {
-    margin: 1rem;
-    min-width: none;
+  .commands-container {
+    padding: 1rem;
   }
-}
-
-@media screen and (max-width: 750px) {
-  .dash-container {
-    display: flex;
-    flex-direction: column;
+  .notification-container {
+    max-width: none;
   }
 }

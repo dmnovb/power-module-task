@@ -54,7 +54,7 @@ export const Battery = ({ name, voltage }: BatteryProps) => {
 
   return (
     <div className="battery-container">
-      <h1>{voltage[currentVoltageIndex]} V</h1>
+      <h1 data-cy="voltage">{voltage[currentVoltageIndex]} V</h1>
       <p>{name} Voltage</p>
     </div>
   );

@@ -35,20 +35,32 @@ export const Commands = ({ payloads }: CommandsProps) => {
     <div className="commands-container">
       <h1 style={{ fontSize: "24px" }}>Commanding</h1>
       {payload1.connected ? (
-        <button onClick={() => handleDisconnect(payload1.id)}>
+        <button
+          data-cy="disconnect-1"
+          onClick={() => handleDisconnect(payload1.id)}
+        >
           {`Disconnect ${payload1.id}`}
         </button>
       ) : (
-        <button onClick={() => handleReconnect(payload1.id)}>
+        <button
+          data-cy="connect-1"
+          onClick={() => handleReconnect(payload1.id)}
+        >
           {`Reconnect ${payload1.id}`}
         </button>
       )}
       {payload2.connected ? (
-        <button onClick={() => handleDisconnect(payload2.id)}>
+        <button
+          data-cy="disconnect-2"
+          onClick={() => handleDisconnect(payload2.id)}
+        >
           {`Disconnect ${payload2.id}`}
         </button>
       ) : (
-        <button onClick={() => handleReconnect(payload2.id)}>
+        <button
+          data-cy="connect-2"
+          onClick={() => handleReconnect(payload2.id)}
+        >
           {`Reconnect ${payload2.id}`}
         </button>
       )}

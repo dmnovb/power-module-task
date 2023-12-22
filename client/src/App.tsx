@@ -12,7 +12,7 @@ const App = () => {
   );
   return (
     <>
-      <div className="dash-container">
+      <div className="dash-container" data-cy="power-module">
         <div className="controls-container">
           <div className="batteries-container">
             {batteries.map((battery: BatteryType) => (

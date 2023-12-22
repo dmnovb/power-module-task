@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { CSSProperties, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { checkAmps } from "../state/payloadSlice";
 import { AppDispatch } from "../state/store";
@@ -8,6 +8,11 @@ type PayloadProps = {
   connected: boolean;
   name: string;
   amps: number[];
+};
+
+const disabledStyle: CSSProperties = {
+  opacity: "0.5",
+  pointerEvents: "none",
 };
 
 export const Payload = ({ name, amps, connected }: PayloadProps) => {
@@ -62,9 +67,8 @@ export const Payload = ({ name, amps, connected }: PayloadProps) => {
   }, [dispatch, currentAmpIndex, amps]);
 
   return (
-    <div className="payload-container">
-      {/* gray out  */}
-      <h1 style={{ fontSize: "19px" }}>
+    <div className="payload-container" style={connected ? {} : disabledStyle}>
+      <h1 data-cy="amps" style={{ fontSize: "19px" }}>
         {connected ? amps[currentAmpIndex] : 0} A
       </h1>
       <p>{name} &apos;s Current Draw</p>

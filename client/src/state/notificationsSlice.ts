@@ -20,9 +20,6 @@ const initialState: NotificationsState = {
   ],
 };
 
-//amps = 2 notifikacii
-//volts = 1 notifikaciq
-
 const notificationsSlice = createSlice({
   name: "notifications",
   initialState,

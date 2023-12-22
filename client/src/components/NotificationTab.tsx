@@ -7,6 +7,7 @@ type NotificationTabProps = {
 
 const ampWarningStyle: CSSProperties = {
   backgroundColor: "rgb(255, 171, 0)",
+  padding: ".3rem",
   color: "black",
   borderRadius: "14px",
   margin: ".5rem",
@@ -14,6 +15,7 @@ const ampWarningStyle: CSSProperties = {
 const ampDangerStyle: CSSProperties = {
   backgroundColor: "rgb(255, 84, 87)",
   color: "black",
+  wordBreak: "break-word",
   borderRadius: "14px",
   margin: ".5rem",
 };
@@ -25,9 +27,8 @@ const voltDangerStyle: CSSProperties = {
 };
 
 export const NotificationTab = ({ notifications }: NotificationTabProps) => {
-  console.log(notifications);
   return (
-    <div className="notification-container">
+    <div className="notification-container" data-cy="notifications">
       <h1 style={{ fontSize: "20px" }}>Notifications</h1>
       <ul className="notification-message-container">
         <li>
@@ -37,8 +38,8 @@ export const NotificationTab = ({ notifications }: NotificationTabProps) => {
                 (notification: Notification) =>
                   notification.chargeType === "Voltage"
               )
-              .map((notification: Notification) => (
-                <li>{notification.message}</li>
+              .map((notification: Notification, index: number) => (
+                <p key={index}>{notification.message}</p>
               ))}
           </div>
           <div>
@@ -47,8 +48,9 @@ export const NotificationTab = ({ notifications }: NotificationTabProps) => {
                 (notification: Notification) =>
                   notification.chargeType === "Amps"
               )
-              .map((notification: Notification) => (
-                <li
+              .map((notification: Notification, index: number) => (
+                <p
+                  key={index}
                   style={
                     notification.notificationType === "Warning"
                       ? ampWarningStyle
@@ -56,7 +58,7 @@ export const NotificationTab = ({ notifications }: NotificationTabProps) => {
                   }
                 >
                   {notification.message}
-                </li>
+                </p>
               ))}
           </div>
         </li>
