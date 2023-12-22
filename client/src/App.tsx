@@ -11,8 +11,12 @@ const App = () => {
   const payloads = useSelector(
     (state: RootState) => state.payloadsReducer.payloads
   );
-  const notifications = useSelector(
-    (state: RootState) => state.notificationsReducer.notifications
+  const ampNotifications = useSelector(
+    (state: RootState) => state.notificationsReducer.ampNotifications
+  );
+
+  const voltNotifications = useSelector(
+    (state: RootState) => state.notificationsReducer.voltageNotifications
   );
 
   return (
@@ -29,20 +33,24 @@ const App = () => {
             ))}
           </div>
           <div className="payloads-container">
-            {payloads.map((payload: PayloadType) => {
-              return (
+            {payloads.map((payload: PayloadType) => (
+              <>
                 <Payload
+                  payloadId={payload.id}
                   connected={payload.connected}
                   key={payload.id}
                   name={`Payload ${payload.id}`}
                   amps={payload.amps}
                 />
-              );
-            })}
+              </>
+            ))}
           </div>
           <Commands payloads={payloads} />
         </div>
-        <NotificationTab notifications={notifications} />
+        <NotificationTab
+          ampNotifications={ampNotifications}
+          voltNotifications={voltNotifications}
+        />
       </div>
     </>
   );

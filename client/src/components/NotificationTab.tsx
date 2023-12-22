@@ -26,29 +26,25 @@ const voltDangerStyle: CSSProperties = {
   margin: ".5rem",
 };
 
-export const NotificationTab = ({ notifications }: NotificationTabProps) => {
+export const NotificationTab = ({
+  ampNotifications,
+  voltNotifications,
+}: any) => {
   return (
     <div className="notification-container" data-cy="notifications">
       <h1 style={{ fontSize: "20px" }}>Notifications</h1>
       <ul className="notification-message-container">
         <li>
           <div style={voltDangerStyle}>
-            {notifications
-              .filter(
-                (notification: Notification) =>
-                  notification.chargeType === "Voltage"
-              )
-              .map((notification: Notification, index: number) => (
+            {voltNotifications.map(
+              (notification: Notification, index: number) => (
                 <p key={index}>{notification.message}</p>
-              ))}
+              )
+            )}
           </div>
           <div>
-            {notifications
-              .filter(
-                (notification: Notification) =>
-                  notification.chargeType === "Amps"
-              )
-              .map((notification: Notification, index: number) => (
+            {ampNotifications.map(
+              (notification: Notification, index: number) => (
                 <p
                   key={index}
                   style={
@@ -59,7 +55,8 @@ export const NotificationTab = ({ notifications }: NotificationTabProps) => {
                 >
                   {notification.message}
                 </p>
-              ))}
+              )
+            )}
           </div>
         </li>
       </ul>

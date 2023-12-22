@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../state/store";
 import { checkVoltage } from "../state/batterySlice";
-import { notificationSupplier } from "../state/notificationsSlice";
+import {
+  addVoltageNotification,
+  removeVoltNotification,
+} from "../state/notificationsSlice";
 
 type BatteryProps = {
   name: string;
@@ -35,20 +38,14 @@ export const Battery = ({ name, voltage }: BatteryProps) => {
   useEffect(() => {
     if (voltage[currentVoltageIndex] < 18) {
       dispatch(
-        notificationSupplier({
-          message: "Low Voltage",
+        addVoltageNotification({
+          message: `Low Voltage`,
           notificationType: "Danger",
           chargeType: "Voltage",
         })
       );
     } else {
-      dispatch(
-        notificationSupplier({
-          message: null,
-          notificationType: null,
-          chargeType: "Voltage",
-        })
-      );
+      dispatch(removeVoltNotification());
     }
   }, [dispatch, currentVoltageIndex, voltage]);
 
