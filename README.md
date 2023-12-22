@@ -12,17 +12,11 @@ Make sure you have Node.js and npm installed on your machine.
 ### Installation
 
 1. Clone the repository to your local machine: `git clone https://github.com/dmnovb/power-module-task.git`
-2. Navigate to the client folder: `cd powermodule/client`
-3. Install dependencies: `npm install`
-4. Navigate to the server folder: `cd ../server`
-5. Install server dependencies: `npm install`
+2. Navigate to the server folder: `cd ../server`
+3. Install server dependencies: `npm install`
+4. Navigate to the client folder: `cd powermodule/client`
+5. Install dependencies: `npm install`
 
-
-#### Client
-
-Navigate to the client folder: `cd powermodule/client`
-Run the development server: `npm run dev`
-Access the client application at [http://localhost:5173](http://localhost:5173).
 
 #### Server
 
@@ -31,6 +25,12 @@ Run the server: `npm run dev`
 The server will be running at [http://localhost:1337](http://localhost:1337).
 Go to `/amps` or `/volts` to check the generated values from the routes.
 And that's it.
+
+#### Client
+
+Navigate to the client folder: `cd powermodule/client`
+Run the development server: `npm run dev`
+Access the client application at [http://localhost:5173](http://localhost:5173).
 
 ### Running Cypress Tests
 
@@ -60,9 +60,13 @@ Cypress will open its test runner, allowing you to interact with and observe the
 
 
 ### Screenshots
-![image](https://github.com/dmnovb/power-module-task/assets/90683442/e72bed74-31bd-48df-b590-cf29bcd92a8e)
+![image](https://github.com/dmnovb/power-module-task/assets/90683442/1c80765c-4534-4bc2-942f-8d1425822087)
+
 
 ### On Mobile
-![image](https://github.com/dmnovb/power-module-task/assets/90683442/b17b761b-82e2-4b3c-8d0b-3c362c3a577b)
-![image](https://github.com/dmnovb/power-module-task/assets/90683442/faef4156-aba8-4491-b5b8-2eb554f46343)
+![image](https://github.com/dmnovb/power-module-task/assets/90683442/5cddb0ef-a74a-4fe3-b60f-7a7963091c7d)
+
+![image](https://github.com/dmnovb/power-module-task/assets/90683442/7db23cc7-bf3b-434b-b81d-5459970c31d7)
+![image](https://github.com/dmnovb/power-module-task/assets/90683442/936ae93d-be70-42e7-8b06-39054f655c79)
+
 
