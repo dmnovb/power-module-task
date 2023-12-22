@@ -2,7 +2,8 @@ import { Notification } from "../state/notificationsSlice";
 import { CSSProperties } from "react";
 
 type NotificationTabProps = {
-  notifications: Notification[];
+  ampNotifications: Notification[];
+  voltNotifications: Notification[];
 };
 
 const ampWarningStyle: CSSProperties = {
@@ -12,16 +13,10 @@ const ampWarningStyle: CSSProperties = {
   borderRadius: "14px",
   margin: ".5rem",
 };
-const ampDangerStyle: CSSProperties = {
+const dangerStyle: CSSProperties = {
   backgroundColor: "rgb(255, 84, 87)",
   color: "black",
   wordBreak: "break-word",
-  borderRadius: "14px",
-  margin: ".5rem",
-};
-const voltDangerStyle: CSSProperties = {
-  backgroundColor: "rgb(255, 84, 87)",
-  color: "black",
   borderRadius: "14px",
   margin: ".5rem",
 };
@@ -29,13 +24,13 @@ const voltDangerStyle: CSSProperties = {
 export const NotificationTab = ({
   ampNotifications,
   voltNotifications,
-}: any) => {
+}: NotificationTabProps) => {
   return (
     <div className="notification-container" data-cy="notifications">
       <h1 style={{ fontSize: "20px" }}>Notifications</h1>
       <ul className="notification-message-container">
         <li>
-          <div style={voltDangerStyle}>
+          <div style={dangerStyle}>
             {voltNotifications.map(
               (notification: Notification, index: number) => (
                 <p key={index}>{notification.message}</p>
@@ -50,7 +45,7 @@ export const NotificationTab = ({
                   style={
                     notification.notificationType === "Warning"
                       ? ampWarningStyle
-                      : ampDangerStyle
+                      : dangerStyle
                   }
                 >
                   {notification.message}
