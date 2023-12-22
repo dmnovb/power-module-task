@@ -14,7 +14,6 @@ const App = () => {
   const ampNotifications = useSelector(
     (state: RootState) => state.notificationsReducer.ampNotifications
   );
-
   const voltNotifications = useSelector(
     (state: RootState) => state.notificationsReducer.voltageNotifications
   );
