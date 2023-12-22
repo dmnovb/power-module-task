@@ -59,6 +59,10 @@ Cypress will open its test runner, allowing you to interact with and observe the
   - Cypress
 
 
-### Screenshot
+### Screenshots
 ![image](https://github.com/dmnovb/power-module-task/assets/90683442/e72bed74-31bd-48df-b590-cf29bcd92a8e)
+
+### On Mobile
+![image](https://github.com/dmnovb/power-module-task/assets/90683442/b17b761b-82e2-4b3c-8d0b-3c362c3a577b)
+![image](https://github.com/dmnovb/power-module-task/assets/90683442/faef4156-aba8-4491-b5b8-2eb554f46343)
 
