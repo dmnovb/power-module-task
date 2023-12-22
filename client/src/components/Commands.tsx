@@ -4,7 +4,10 @@ import {
   disconnectPayload,
   reconnectPayload,
 } from "../state/payloadSlice";
-import { addAmpNotification } from "../state/notificationsSlice";
+import {
+  addAmpNotification,
+  removeAmpNotification,
+} from "../state/notificationsSlice";
 
 type CommandsProps = {
   payloads: Payload[];
@@ -17,14 +20,7 @@ export const Commands = ({ payloads }: CommandsProps) => {
     dispatch(disconnectPayload(id));
 
     //dispatch final notification
-    dispatch(
-      addAmpNotification({
-        message: null,
-        chargeType: null,
-        notificationType: null,
-        payloadId: id,
-      })
-    );
+    dispatch(removeAmpNotification(id));
   };
 
   const handlePayloadReconnect = (id: number) => {
