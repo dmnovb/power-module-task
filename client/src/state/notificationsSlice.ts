@@ -29,7 +29,6 @@ const notificationsSlice = createSlice({
         (currentNotification) =>
           currentNotification.chargeType !== action.payload.chargeType
       );
-
       state.notifications.push(action.payload);
     },
   },

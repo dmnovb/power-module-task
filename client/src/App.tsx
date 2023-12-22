@@ -5,11 +5,16 @@ import type { Payload as PayloadType } from "./state/payloadSlice";
 import type { RootState } from "./state/store";
 
 const App = () => {
-  const batteries = useSelector((state: RootState) => state.battery.batteries);
-  const payloads = useSelector((state: RootState) => state.payload.payloads);
-  const notifications = useSelector(
-    (state: RootState) => state.notifications.notifications
+  const batteries = useSelector(
+    (state: RootState) => state.batteriesReducer.batteries
   );
+  const payloads = useSelector(
+    (state: RootState) => state.payloadsReducer.payloads
+  );
+  const notifications = useSelector(
+    (state: RootState) => state.notificationsReducer.notifications
+  );
+
   return (
     <>
       <div className="dash-container" data-cy="power-module">
