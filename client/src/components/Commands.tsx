@@ -4,10 +4,7 @@ import {
   disconnectPayload,
   reconnectPayload,
 } from "../state/payloadSlice";
-import {
-  addAmpNotification,
-  removeAmpNotification,
-} from "../state/notificationsSlice";
+import { removeAmpNotification } from "../state/notificationsSlice";
 
 type CommandsProps = {
   payloads: Payload[];
