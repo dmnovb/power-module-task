@@ -1,5 +1,6 @@
 # PowerModule
 
+
 ## Getting Started
 
 Follow the steps below to get the project up and running on your local machine.
@@ -21,7 +22,7 @@ Make sure you have Node.js and npm installed on your machine.
 
 Navigate to the client folder: `cd powermodule/client`
 Run the development server: `npm run dev`
-Access the client application at [http://localhost:3000](http://localhost:3000).
+Access the client application at [http://localhost:5173](http://localhost:5173).
 
 #### Server
 
@@ -31,4 +32,37 @@ The server will be running at [http://localhost:1337](http://localhost:1337).
 Go to `/amps` or `/volts` to check the generated values from the routes.
 And that's it.
 
+### Running Cypress Tests
+
+To run Cypress tests:
+
+1. Ensure that both the client and server are running.
+2. Open a new terminal window.
+3. Navigate to the client folder: `cd powermodule/client`
+4. Run Cypress tests: `npx cypress open`
+
+Cypress will open its test runner, allowing you to interact with and observe the test execution.
+
+### Technologies Used
+
+- **Frontend:**
+  - React
+  - Redux
+  - TypeScript
+  - Vite
+
+- **Backend:**
+  - Node.js
+  - Express
+
+- **Testing:**
+  - Cypress
+
+
+### Screenshots
+![image](https://github.com/dmnovb/power-module-task/assets/90683442/e72bed74-31bd-48df-b590-cf29bcd92a8e)
+
+### On Mobile
+![image](https://github.com/dmnovb/power-module-task/assets/90683442/b17b761b-82e2-4b3c-8d0b-3c362c3a577b)
+![image](https://github.com/dmnovb/power-module-task/assets/90683442/faef4156-aba8-4491-b5b8-2eb554f46343)
 
