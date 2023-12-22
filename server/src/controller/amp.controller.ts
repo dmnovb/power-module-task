@@ -10,13 +10,13 @@ export const ampGenerator = async (res: Response) => {
   };
 
   for (let i = 1; i <= steps; i++) {
-    const voltage = (i / steps) * maxAmps;
-    updateVoltage(voltage);
+    const amps = (i / steps) * maxAmps;
+    updateVoltage(amps);
   }
 
   for (let i = steps - 1; i >= 1; i--) {
-    const voltage = (i / steps) * maxAmps;
-    updateVoltage(voltage);
+    const amps = (i / steps) * maxAmps;
+    updateVoltage(amps);
   }
   res.send(amps);
 };
