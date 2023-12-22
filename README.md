@@ -12,7 +12,7 @@ Make sure you have Node.js and npm installed on your machine.
 ### Installation
 
 1. Clone the repository to your local machine: `git clone https://github.com/dmnovb/power-module-task.git`
-2. Navigate to the server folder: `cd ../server`
+2. Navigate to the server folder: `cd powermodule/server`
 3. Install server dependencies: `npm install`
 4. Navigate to the client folder: `cd powermodule/client`
 5. Install dependencies: `npm install`
